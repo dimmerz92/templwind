@@ -1,0 +1,40 @@
+package icons
+
+import "github.com/dimmerz92/templwind/pkg/lib"
+
+type SpinnerIcon string
+
+const (
+	SimpleSpinner SpinnerIcon = "border-5 rounded-full border-current border-b-spinner-accent animate-spin"
+)
+
+type SpinnerSize string
+
+const (
+	XXSmallSpinner SpinnerSize = "h-4 w-4 text-[2px]"
+	XSmallSpinner  SpinnerSize = "h-6 w-6 text-[3px]"
+	SmallSpinner   SpinnerSize = "h-8 w-8 text-[4px]"
+	MediumSpinner  SpinnerSize = "h-10 w-10 text-[5px]"
+	LargeSpinner   SpinnerSize = "h-12 w-12 text-[6px]"
+	XLargeSpinner  SpinnerSize = "h-14 w-14 text-[7px]"
+	XXLargeSpinner SpinnerSize = "h-16 w-16 text=[8px]"
+)
+
+type SpinnerProps struct {
+	Icon SpinnerIcon
+	Size SpinnerSize
+}
+
+templ Spinner(props SpinnerProps) {
+	<div class="inline-block">
+		<div class={ string(lib.Coalesce(props.Size, XXSmallSpinner)) }>
+			<span
+				class={
+					"inline-block",
+					string(lib.Coalesce(props.Icon, SimpleSpinner)),
+					string(lib.Coalesce(props.Size, XXSmallSpinner)),
+				}
+			></span>
+		</div>
+	</div>
+}

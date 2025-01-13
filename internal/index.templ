@@ -12,6 +12,14 @@ templ Index() {
 		</head>
 		<body class="bg-main text-inverse">
 			@ui.ThemeToggle(ui.ThemeToggleProps{Size: ui.LargeToggle, Icon: icons.LightbulbToggle})
+			<br/>
+			@icons.Spinner(icons.SpinnerProps{})
+			@icons.Spinner(icons.SpinnerProps{Size: icons.XSmallSpinner})
+			@icons.Spinner(icons.SpinnerProps{Size: icons.SmallSpinner})
+			@icons.Spinner(icons.SpinnerProps{Size: icons.MediumSpinner})
+			@icons.Spinner(icons.SpinnerProps{Size: icons.LargeSpinner})
+			@icons.Spinner(icons.SpinnerProps{Size: icons.XLargeSpinner})
+			@icons.Spinner(icons.SpinnerProps{Size: icons.XXLargeSpinner})
 		</body>
 	</html>
 }

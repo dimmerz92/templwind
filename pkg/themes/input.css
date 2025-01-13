@@ -5,6 +5,8 @@
 @theme {
 	--color-main: var(--color-neutral-50);
 	--color-inverse: var(--color-neutral-900);
+
+	--color-spinner-accent: var(--color-blue-600);
 }
 
 .dark {
