@@ -1,11 +1,17 @@
 package internal
 
+import "github.com/dimmerz92/templwind/pkg/ui"
+import "github.com/dimmerz92/templwind/pkg/icons"
+
 templ Index() {
 	<!DOCTYPE html>
 	<html>
 		<head>
 			<link rel="stylesheet" href="/output.css"/>
+			@ui.DetectTheme()
 		</head>
-		<body class="bg-main text-inverse"></body>
+		<body class="bg-main text-inverse">
+			@ui.ThemeToggle(ui.ThemeToggleProps{Size: ui.LargeToggle, Icon: icons.LightbulbToggle})
+		</body>
 	</html>
 }

@@ -1,0 +1,57 @@
+package ui
+
+import "github.com/dimmerz92/templwind/pkg/icons"
+import "github.com/dimmerz92/templwind/pkg/lib"
+
+type ThemeToggleSize string
+
+const (
+	XSmallToggle ThemeToggleSize = "text-[24px]"
+	SmallToggle  ThemeToggleSize = "text-[32px]"
+	MediumToggle ThemeToggleSize = "text-[40px]"
+	LargeToggle  ThemeToggleSize = "text-[48px]"
+	XLargeToggle ThemeToggleSize = "text-[56px]"
+)
+
+type ThemeToggleProps struct {
+	Icon icons.ThemeToggleIcon // Optional: Specifies the icon to be used, defaults to Classic
+	Size ThemeToggleSize       // Optional: Specifies the icon size, defaults to MediumToggle
+}
+
+// ThemeToggle renders a clickable theme toggle icon. Best used with the DetectTheme script component to apply theme preferences on load.
+// NOTE: This component requires JavaScript.
+templ ThemeToggle(props ThemeToggleProps) {
+	<label
+		class={ "theme-toggle cursor-pointer inline-block leading-0", string(lib.Coalesce(props.Size, MediumToggle)) }
+		role="button"
+		aria-label="click to toggle between light and dark mode"
+		onkeypress="event.code === 'Space' && document.querySelector('#theme-toggle').click();"
+		tabindex="0"
+	>
+		<input
+			type="checkbox"
+			id="theme-toggle"
+			class="hidden"
+			onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', this.checked ? 'dark' : 'light');"
+		/>
+		@icons.ThemeToggleMap[props.Icon]()
+	</label>
+}
+
+// DetectTheme will checked for a cached theme preference or derive it from the user's system preferences.
+// NOTE: This is a JavaScript component.
+templ DetectTheme() {
+	<script>
+		// checked for a cached theme preference or derive from system
+		let theme = localStorage.getItem("theme") ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+		// apply color theme
+		document.documentElement.classList.toggle("dark", theme === "dark");
+
+		// check the toggle checkbox if present
+		document.addEventListener("DOMContentLoaded", () => {
+			const toggle = document.querySelector('#theme-toggle');
+			if (toggle !== null) toggle.checked = theme === "dark";
+		}, { once: true })
+	</script>
+}
