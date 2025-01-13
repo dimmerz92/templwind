@@ -14,6 +14,8 @@ type SpinnerIcon string
 
 const (
 	SimpleSpinner SpinnerIcon = "border-5 rounded-full border-current border-b-spinner-accent animate-spin"
+
+	GrowingSpinner SpinnerIcon = "relative rounded-full animate-spin before:absolute before:content-[''] before:inset-0 before:border-5 before:border-current before:rounded-full before:animate-[growing_3s_linear_infinite] after:absolute after:content-[''] after:inset-0 after:border-5 after:border-spinner-accent after:rounded-full after:animate-[growing_3s_linear_infinite] after:rotate-y-180 after:rotate-z-90"
 )
 
 type SpinnerSize string
@@ -29,10 +31,11 @@ const (
 )
 
 type SpinnerProps struct {
-	Icon SpinnerIcon
-	Size SpinnerSize
+	Icon SpinnerIcon // Optional: Specifies the spinner icon to use, defaults to SimpleSpinner.
+	Size SpinnerSize // Optional: Specifies the spinner size, defaults to XSmallSpinner.
 }
 
+// Spinner renders an animated spinner for a variety of loading contexts
 func Spinner(props SpinnerProps) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -58,7 +61,7 @@ func Spinner(props SpinnerProps) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var2 = []any{string(lib.Coalesce(props.Size, XXSmallSpinner))}
+		var templ_7745c5c3_Var2 = []any{string(lib.Coalesce(props.Size, XSmallSpinner))}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var2...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -83,7 +86,7 @@ func Spinner(props SpinnerProps) templ.Component {
 		var templ_7745c5c3_Var4 = []any{
 			"inline-block",
 			string(lib.Coalesce(props.Icon, SimpleSpinner)),
-			string(lib.Coalesce(props.Size, XXSmallSpinner)),
+			string(lib.Coalesce(props.Size, XSmallSpinner)),
 		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var4...)
 		if templ_7745c5c3_Err != nil {
