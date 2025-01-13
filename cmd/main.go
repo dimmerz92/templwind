@@ -24,7 +24,7 @@ func init() {
 func main() {
 	e := echo.New()
 
-	e.File("/output.css", "themes/output.css")
+	e.File("/output.css", "pkg/themes/output.css")
 
 	e.GET("/", func(c echo.Context) error {
 		return lib.Render(c, http.StatusOK, internal.Index())
