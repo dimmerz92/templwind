@@ -53,23 +53,23 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.XXSmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticDotSpinner, Size: icons.XXSmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticDotSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.SmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticDotSpinner, Size: icons.SmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.MediumSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticDotSpinner, Size: icons.MediumSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.LargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticDotSpinner, Size: icons.LargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -77,7 +77,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.XXLargeSpinner, AccentColor: themes.Purple600}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticDotSpinner, Size: icons.XXLargeSpinner, AccentColor: themes.Purple600}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

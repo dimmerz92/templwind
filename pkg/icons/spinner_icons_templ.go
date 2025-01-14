@@ -22,7 +22,9 @@ const (
 
 	PulsingSpinner SpinnerIcon = "relative before:absolute before:content-[''] before:h-full before:w-full before:border-2 before:border-spinner-accent before:rounded-full before:top-0 before:left-0 before:animate-[pulsing_2s_linear_infinite] after:absolute after:content-[''] after:h-full after:w-full after:border-2 after:border-spinner-accent after:rounded-full after:top-0 after:left-0 after:animate-[pulsing_2s_linear_infinite]"
 
-	RunningSpinner SpinnerIcon = "relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[1em] w-[1em] text-spinner-accent rounded-full indent-[-9999em] animate-[dynamicdots_1.3s_linear_infinite]"
+	DynamicDotSpinner SpinnerIcon = "relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[1em] w-[1em] text-spinner-accent rounded-full indent-[-9999em] animate-[dynamicdots_1.3s_linear_infinite]"
+
+	StaticDotSpinner SpinnerIcon = "relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[1em] w-[1em] text-spinner-accent rounded-full indent-[-9999em] animate-[staticdots_1.1s_ease_infinite]"
 )
 
 type SpinnerSize string
@@ -121,7 +123,7 @@ func Spinner(props SpinnerProps) templ.Component {
 				),
 			)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `pkg/icons/spinner_icons.templ`, Line: 51, Col: 5}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `pkg/icons/spinner_icons.templ`, Line: 53, Col: 5}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
 			if templ_7745c5c3_Err != nil {

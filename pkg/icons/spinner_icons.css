@@ -68,3 +68,95 @@
       -3em 0em 0 0, -2em -2em 0 0.2em;
   }
 }
+
+@keyframes staticdots {
+  0%,
+  100% {
+    box-shadow:
+      0em -2.6em 0em 0em var(--color-spinner-accent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent);
+  }
+  12.5% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      1.8em -1.8em 0 0em var(--color-spinner-accent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent);
+  }
+  25% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      2.5em 0em 0 0em var(--color-spinner-accent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent);
+  }
+  37.5% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      1.75em 1.75em 0 0em var(--color-spinner-accent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent);
+  }
+  50% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      0em 2.5em 0 0em var(--color-spinner-accent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent);
+  }
+  62.5% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      -1.8em 1.8em 0 0em var(--color-spinner-accent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent);
+  }
+  75% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      -2.6em 0em 0 0em var(--color-spinner-accent),
+      -1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent);
+  }
+  87.5% {
+    box-shadow:
+      0em -2.6em 0em 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.8em -1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      2.5em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      1.75em 1.75em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      0em 2.5em 0 0em color-mix(in oklch, var(--color-spinner-accent) 20%, transparent),
+      -1.8em 1.8em 0 0em color-mix(in oklch, var(--color-spinner-accent) 50%, transparent),
+      -2.6em 0em 0 0em color-mix(in oklch, var(--color-spinner-accent) 70%, transparent),
+      -1.8em -1.8em 0 0em var(--color-spinner-accent);
+  }
+}
