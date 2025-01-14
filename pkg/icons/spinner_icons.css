@@ -160,3 +160,8 @@
       -1.8em -1.8em 0 0em var(--color-spinner-accent);
   }
 }
+
+@keyframes dynamicchat {
+  0%, 80%, 100% {box-shadow: 0 3em 0 -1.3em}
+  40% {box-shadow: 0 3em 0 0}
+}
