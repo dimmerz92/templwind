@@ -9,6 +9,9 @@ import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
 import "github.com/dimmerz92/templwind/pkg/lib"
+import "github.com/dimmerz92/templwind/pkg/themes"
+import "fmt"
+import tw "github.com/Oudwins/tailwind-merge-go/pkg/twmerge"
 
 type SpinnerIcon string
 
@@ -18,6 +21,8 @@ const (
 	GrowingSpinner SpinnerIcon = "relative rounded-full animate-spin before:absolute before:content-[''] before:inset-0 before:border-5 before:border-current before:rounded-full before:animate-[growing_3s_linear_infinite] after:absolute after:content-[''] after:inset-0 after:border-5 after:border-spinner-accent after:rounded-full after:animate-[growing_3s_linear_infinite] after:rotate-y-180 after:rotate-z-90"
 
 	PulsingSpinner SpinnerIcon = "relative before:absolute before:content-[''] before:h-full before:w-full before:border-2 before:border-spinner-accent before:rounded-full before:top-0 before:left-0 before:animate-[pulsing_2s_linear_infinite] after:absolute after:content-[''] after:h-full after:w-full after:border-2 after:border-spinner-accent after:rounded-full after:top-0 after:left-0 after:animate-[pulsing_2s_linear_infinite]"
+
+	RunningSpinner SpinnerIcon = "relative top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-[1em] w-[1em] text-spinner-accent rounded-full indent-[-9999em] animate-[dynamicdots_1.3s_linear_infinite]"
 )
 
 type SpinnerSize string
@@ -33,8 +38,10 @@ const (
 )
 
 type SpinnerProps struct {
-	Icon SpinnerIcon // Optional: Specifies the spinner icon to use, defaults to SimpleSpinner.
-	Size SpinnerSize // Optional: Specifies the spinner size, defaults to XSmallSpinner.
+	AccentColor themes.TailwindColor // Optional: Specifies the spinner accent color, defaults to Blue600.
+	MainColor   themes.TailwindColor // Optional: Specifies the spinner main color, defaults to current.
+	Icon        SpinnerIcon          // Optional: Specifies the spinner icon to use, defaults to SimpleSpinner.
+	Size        SpinnerSize          // Optional: Specifies the spinner size, defaults to XSmallSpinner.
 }
 
 // Spinner renders an animated spinner for a variety of loading contexts
@@ -59,7 +66,7 @@ func Spinner(props SpinnerProps) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"inline-block\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"inline-block align-middle\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -86,28 +93,59 @@ func Spinner(props SpinnerProps) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var4 = []any{
-			"inline-block",
-			string(lib.Coalesce(props.Icon, SimpleSpinner)),
-			string(lib.Coalesce(props.Size, XSmallSpinner)),
+			tw.Merge(
+				"inline-block",
+				string(lib.Coalesce(props.Size, XSmallSpinner)),
+				string(lib.Coalesce(props.Icon, SimpleSpinner)),
+			),
 		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var4...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<span class=\"")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 4, "<span")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var5 string
-		templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var4).String())
+		if props.AccentColor != "" || props.MainColor != "" {
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, " style=\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			var templ_7745c5c3_Var5 string
+			templ_7745c5c3_Var5, templ_7745c5c3_Err = templ.JoinStringErrs(
+				fmt.Sprintf(
+					"%s%s",
+					fmt.Sprintf("--color-spinner-accent: %s;", string(lib.Coalesce(props.AccentColor, themes.Blue500))),
+					lib.IIF(props.MainColor != "", fmt.Sprintf("color: %s", props.MainColor), ""),
+				),
+			)
+			if templ_7745c5c3_Err != nil {
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `pkg/icons/spinner_icons.templ`, Line: 51, Col: 5}
+			}
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 6, "\"")
+			if templ_7745c5c3_Err != nil {
+				return templ_7745c5c3_Err
+			}
+		}
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 7, " class=\"")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		var templ_7745c5c3_Var6 string
+		templ_7745c5c3_Var6, templ_7745c5c3_Err = templ.JoinStringErrs(templ.CSSClasses(templ_7745c5c3_Var4).String())
 		if templ_7745c5c3_Err != nil {
 			return templ.Error{Err: templ_7745c5c3_Err, FileName: `pkg/icons/spinner_icons.templ`, Line: 1, Col: 0}
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var5))
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var6))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 5, "\"></span></div></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 8, "\"></span></div></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

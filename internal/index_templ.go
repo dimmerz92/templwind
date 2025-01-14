@@ -10,6 +10,7 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import "github.com/dimmerz92/templwind/pkg/ui"
 import "github.com/dimmerz92/templwind/pkg/icons"
+import "github.com/dimmerz92/templwind/pkg/themes"
 
 func Index() templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
@@ -52,31 +53,31 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.XXSmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.XXSmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.SmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.SmallSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.MediumSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.MediumSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.LargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.LargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.XLargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.SimpleSpinner, Size: icons.XLargeSpinner, AccentColor: themes.Pink600, MainColor: themes.Blue500}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.XXLargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.XXLargeSpinner, AccentColor: themes.Purple600}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

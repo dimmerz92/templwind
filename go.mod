@@ -3,6 +3,7 @@ module github.com/dimmerz92/templwind
 go 1.23.4
 
 require (
+	github.com/Oudwins/tailwind-merge-go v0.2.0
 	github.com/a-h/templ v0.3.819
 	github.com/labstack/echo/v4 v4.13.3
 )

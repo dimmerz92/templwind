@@ -2,6 +2,7 @@ package internal
 
 import "github.com/dimmerz92/templwind/pkg/ui"
 import "github.com/dimmerz92/templwind/pkg/icons"
+import "github.com/dimmerz92/templwind/pkg/themes"
 
 templ Index() {
 	<!DOCTYPE html>
@@ -13,13 +14,13 @@ templ Index() {
 		<body class="bg-main text-inverse">
 			@ui.ThemeToggle(ui.ThemeToggleProps{Size: ui.LargeToggle, Icon: icons.LightbulbToggle})
 			<br/>
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.XXSmallSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.SmallSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.MediumSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.LargeSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.XLargeSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.PulsingSpinner, Size: icons.XXLargeSpinner})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.XXSmallSpinner})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.SmallSpinner})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.MediumSpinner})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.LargeSpinner})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.SimpleSpinner, Size: icons.XLargeSpinner, AccentColor: themes.Pink600, MainColor: themes.Blue500})
+			@icons.Spinner(icons.SpinnerProps{Icon: icons.RunningSpinner, Size: icons.XXLargeSpinner, AccentColor: themes.Purple600})
 		</body>
 	</html>
 }
