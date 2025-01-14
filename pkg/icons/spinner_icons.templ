@@ -36,15 +36,16 @@ const (
 )
 
 type SpinnerProps struct {
-	AccentColor themes.TailwindColor // Optional: Specifies the spinner accent color, defaults to Blue600.
-	MainColor   themes.TailwindColor // Optional: Specifies the spinner main color, defaults to current.
-	Icon        SpinnerIcon          // Optional: Specifies the spinner icon to use, defaults to SimpleSpinner.
-	Size        SpinnerSize          // Optional: Specifies the spinner size, defaults to XSmallSpinner.
+	AccentColor   themes.TailwindColor // Optional: Specifies the spinner accent color, defaults to Blue600.
+	MainColor     themes.TailwindColor // Optional: Specifies the spinner main color, defaults to current.
+	Icon          SpinnerIcon          // Optional: Specifies the spinner icon to use, defaults to SimpleSpinner.
+	Size          SpinnerSize          // Optional: Specifies the spinner size, defaults to XSmallSpinner.
+	HtmxIndicator bool                 // Optional: Handles htmx indicator interactivity, no need to assign the hx-indicator attribute explicitly, simply add the spinner as a child to the element making htmx requests.
 }
 
 // Spinner renders an animated spinner for a variety of loading contexts
 templ Spinner(props SpinnerProps) {
-	<div class="inline-block align-middle">
+	<div class={ "inline-block align-middle", lib.IIF(props.HtmxIndicator, "htmx-indicator", "") }>
 		<div class={ string(lib.Coalesce(props.Size, XSmallSpinner)) }>
 			<span
 				if props.AccentColor != "" || props.MainColor != "" {

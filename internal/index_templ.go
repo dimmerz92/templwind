@@ -69,7 +69,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.LargeSpinner}).Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.LargeSpinner, HtmxIndicator: true}).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
