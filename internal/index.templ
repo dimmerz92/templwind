@@ -14,13 +14,62 @@ templ Index() {
 		<body class="bg-main text-inverse">
 			@ui.ThemeToggle(ui.ThemeToggleProps{Size: ui.LargeToggle, Icon: icons.LightbulbToggle})
 			<br/>
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.XXSmallSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.SmallSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.MediumSpinner})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.LargeSpinner, HtmxIndicator: true})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.SimpleSpinner, Size: icons.XLargeSpinner, AccentColor: themes.Pink600, MainColor: themes.Blue500})
-			@icons.Spinner(icons.SpinnerProps{Icon: icons.StaticChatSpinner, Size: icons.XXLargeSpinner, AccentColor: themes.Purple600})
+			@ui.Button(ui.ButtonProps{Border: themes.Rounded}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.SecondaryButton, Border: themes.Pill}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.DangerButton}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.SuccessButton}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.WarningButton}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Outline: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.SecondaryButton, Outline: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.DangerButton, Outline: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.SuccessButton, Outline: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.WarningButton, Outline: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Outline: true}) {
+				button
+			}
+			<br/>
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Size: themes.SmallFormControl}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Size: themes.MediumFormControl}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Size: themes.LargeFormControl}) {
+				button
+			}
+			<br/>
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Size: themes.SmallFormControl, FullWidth: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Size: themes.MediumFormControl, FullWidth: true}) {
+				button
+			}
+			@ui.Button(ui.ButtonProps{Style: ui.InfoButton, Size: themes.LargeFormControl, FullWidth: true}) {
+				button
+			}
 		</body>
 	</html>
 }
