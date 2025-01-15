@@ -141,12 +141,18 @@ func Spinner(props SpinnerProps) templ.Component {
 			templ_7745c5c3_Var7, templ_7745c5c3_Err = templ.JoinStringErrs(
 				fmt.Sprintf(
 					"%s%s",
-					fmt.Sprintf("--color-spinner-accent: %s;", string(lib.Coalesce(props.AccentColor, themes.Blue500))),
-					lib.IIF(props.MainColor != "", fmt.Sprintf("color: %s", props.MainColor), ""),
+					fmt.Sprintf(
+						"--color-spinner-accent: var(--color-%s);",
+						lib.Coalesce(props.AccentColor, themes.Blue500),
+					),
+					lib.IIF(
+						props.MainColor != "",
+						fmt.Sprintf("color: var(--color-%s);", props.MainColor),
+						""),
 				),
 			)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `pkg/icons/spinner_icons.templ`, Line: 58, Col: 5}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `pkg/icons/spinner_icons.templ`, Line: 64, Col: 5}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var7))
 			if templ_7745c5c3_Err != nil {
